@@ -20,7 +20,7 @@ public class Evaluacion_Unidad_II {
         Scanner entrada = new Scanner(System.in);
         ArbolBinario arbol = new ArbolBinario();
         String contenido;
-        int detener;
+        int detener, detener1;
         int imprimir;
         
         do {
@@ -34,22 +34,30 @@ public class Evaluacion_Unidad_II {
             
         } while(detener == 1); // Hasta que el usuario desee, el ciclo termina
         
-        System.out.println("\n¿Cómo quieres imprimir los datos?\n");
-        System.out.println("In Order = 1\n" + "Post Order = 2\n" + "Pre Order = 3\n");        
-        imprimir = entrada.nextInt();
+        do {
+            System.out.println("\n¿Cómo quieres imprimir los datos?\n");
+            System.out.println("In Order = 1\n" + "Post Order = 2\n" + "Pre Order = 3\n");        
+            imprimir = entrada.nextInt();
         
-        switch (imprimir) {
-            case 1:
-                arbol.inOrder();
-                break;
-            case 2:
-                arbol.postOrder();
-                break;
-            case 3:
-                arbol.preOrder();
-                break;
-            default:
-                System.out.println("Ingresa un número válido.");
-        }
+            switch (imprimir) {
+                case 1:
+                    arbol.inOrder();
+                    break;
+                case 2:
+                    arbol.postOrder();
+                    break;
+                case 3:
+                    arbol.preOrder();
+                    break;
+                default:
+                    System.out.println("Ingresa un número válido.");
+            }
+            
+            System.out.println("\n¿Quieres seguir imprimiendo? (Si = 1, No = 0)");
+            detener1 = entrada.nextInt();
+        } while(detener1 != 0);
+        
+        System.out.println("\nContenido del árbol almacenado en una lista:");
+        
     }    
 }
