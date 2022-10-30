@@ -11,7 +11,7 @@ package evaluacion_unidad_ii;
 public class Nodo { 
     private Nodo derecha; 
     private Nodo izquierda;
-    private String contenido;
+    private String contenido; // Palabras que se van a almacenar en cada nodo
      
     public Nodo() {
         this.derecha = null;
