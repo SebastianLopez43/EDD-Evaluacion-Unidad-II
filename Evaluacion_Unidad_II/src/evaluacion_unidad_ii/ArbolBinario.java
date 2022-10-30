@@ -30,20 +30,27 @@ public class ArbolBinario {
         
         Nodo newNode = new Nodo(contenido);                
         
-        if (contenido.compareToIgnoreCase(nodoActual.getContenido()) == 0) {
+        if (contenido.compareToIgnoreCase(nodoActual.getContenido()) == 0) { // Las dos palabras son iguales
             System.out.println("El elemento está repetido");            
-        } else {
+        } else if (contenido.compareToIgnoreCase(nodoActual.getContenido()) < 0) { // La palabra va antes alfabéticamente
             if (nodoActual.getIzquierda() == null) {
                 nodoActual.setIzquierda(newNode);
             } else {
                 agregarRecur(contenido, nodoActual.getIzquierda());
             }            
+        } else if (contenido.compareToIgnoreCase(nodoActual.getContenido()) > 0) { // La palabra va después alfabéticamente
+            if (nodoActual.getDerecha()== null) {
+                nodoActual.setDerecha(newNode);
+            } else {
+                agregarRecur(contenido, nodoActual.getDerecha());
+            } 
         }
     }
     
     // Método In Order
     // Método público (para el usuario)
     public void inOrder() {
+        System.out.println("\nÁrbol binario In Order:");
         inOrderRecur(raiz);
         System.out.println("");
     }
@@ -60,6 +67,7 @@ public class ArbolBinario {
     // Método Post Order
     // Método público (para el usuario)
     public void postOrder() {
+        System.out.println("\nÁrbol binario Post Order:");
         postOrderRecur(raiz);
         System.out.println("");
     }
@@ -76,6 +84,7 @@ public class ArbolBinario {
     // Método Pre Order
     // Método público (para el usuario)
     public void preOrder() {
+        System.out.println("\nÁrbol binario Pre Order:");
         preOrderRecur(raiz);
         System.out.println("");
     }
@@ -87,5 +96,5 @@ public class ArbolBinario {
             preOrderRecur(nodoActual.getDerecha());
             System.out.print(nodoActual.getContenido() + " ");
         }
-    }
+    }   
 }
