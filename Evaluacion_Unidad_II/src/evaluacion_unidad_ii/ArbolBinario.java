@@ -75,13 +75,13 @@ public class ArbolBinario {
     // Método privado recursivo
     private void postOrderRecur(Nodo nodoActual) {        
         if (nodoActual != null) {
-            System.out.print(nodoActual.getContenido() + " ");
             postOrderRecur(nodoActual.getIzquierda());
             postOrderRecur(nodoActual.getDerecha());
+            System.out.print(nodoActual.getContenido() + " ");
         }
     }
     
-    // Método Pre Order
+    // Método Pre Order 
     // Método público (para el usuario)
     public void preOrder() {
         System.out.println("\nÁrbol binario Pre Order:");
@@ -92,9 +92,9 @@ public class ArbolBinario {
     // Método privado recursivo
     private void preOrderRecur(Nodo nodoActual) {        
         if (nodoActual != null) {
+            System.out.print(nodoActual.getContenido() + " ");
             preOrderRecur(nodoActual.getIzquierda());
             preOrderRecur(nodoActual.getDerecha());
-            System.out.print(nodoActual.getContenido() + " ");
         }
     }   
 }
