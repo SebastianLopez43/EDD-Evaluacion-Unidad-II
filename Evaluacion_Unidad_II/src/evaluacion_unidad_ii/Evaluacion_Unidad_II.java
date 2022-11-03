@@ -58,5 +58,6 @@ public class Evaluacion_Unidad_II {
         } while(detener1 != 0);
         
         System.out.println("\nContenido del árbol almacenado en una lista:");  
+        arbol.getInOrderList().imprimir();
     }    
 }

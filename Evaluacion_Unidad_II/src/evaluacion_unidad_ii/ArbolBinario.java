@@ -10,9 +10,11 @@ package evaluacion_unidad_ii;
 
 public class ArbolBinario {
     private Nodo raiz;
+    private Lista ListaInOrder;
     
     public ArbolBinario() {
         this.raiz = null;
+        ListaInOrder = new Lista();
     }        
         
     // Método para el usuario
@@ -60,6 +62,7 @@ public class ArbolBinario {
         if (nodoActual != null) {
             inOrderRecur(nodoActual.getIzquierda());
             System.out.print(nodoActual.getContenido() + " ");
+            ListaInOrder.agregar(nodoActual.getContenido());
             inOrderRecur(nodoActual.getDerecha());
         }
     }
@@ -96,5 +99,9 @@ public class ArbolBinario {
             preOrderRecur(nodoActual.getIzquierda());
             preOrderRecur(nodoActual.getDerecha());
         }
-    }   
+    }
+    //Obtenemos la lista
+    public Lista getInOrderList(){
+        return ListaInOrder;
+    }
 }
